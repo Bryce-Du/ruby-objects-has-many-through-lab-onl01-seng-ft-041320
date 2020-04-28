@@ -10,7 +10,7 @@ class Appointment
     @@all << self
   end
   
-  def Song.all
+  def Appointment.all
     @@all
   end
 end
