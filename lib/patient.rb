@@ -1,4 +1,4 @@
-class Artist 
+class Patient 
   attr_reader :name 
   
   @@all = []
@@ -8,17 +8,17 @@ class Artist
     @@all << self
   end
   
-  def Artist.all
+  def Patient.all
     @@all
   end
 
-  def songs 
-    Song.all.select {|song| song.artist == self}
+  def appointments 
+    Appointment.all.select {|appointment| appointment.patient == self}
   end
-  def genres
-    songs.map {|song| song.genre}
+  def doctors
+    appointments.map {|appointment| appointment.doctor}
   end
-  def new_song (name, genre)
-    Song.new(name, self, genre)
+  def new_appointment (date, doctor)
+    Appointment.new(date, self, doctor)
   end
 end
